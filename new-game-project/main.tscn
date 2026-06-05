@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cqow47bch5ocs"]
+
+[ext_resource type="Script" uid="uid://d2lck71voytmp" path="res://color_rect.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://cwd252r6yxmjh" path="res://world.png" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://c6ylfv6b6fexy" path="res://lildude(test1).png" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://cb2pdg5knqn54" path="res://gem1.png" id="4_1bvp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(87, 134)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h2yge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(3377.48, 459.84225)
+
+[node name="Node2D" type="Node2D" unique_id=910485909]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1496708038]
+z_index = 2
+position = Vector2(790, 203)
+collision_layer = 2
+collision_mask = 7
+floor_snap_length = 3.1
+safe_margin = 1.0
+script = ExtResource("1_ig7tw")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1950598163]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=2142665249]
+position = Vector2(305, 228)
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D" unique_id=2012727195]
+position = Vector2(1.9999999, -20.999996)
+scale = Vector2(4.40625, 4.40625)
+texture = ExtResource("3_1bvp3")
+
+[node name="World" type="Sprite2D" parent="." unique_id=233287514]
+z_index = -5
+position = Vector2(-241.00003, 327)
+scale = Vector2(1.00045, 0.29140413)
+texture = ExtResource("2_0xm2m")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=762770]
+position = Vector2(44, 732)
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_h2yge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=775311010]
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=466296243]
+
+[node name="Gem1" type="Sprite2D" parent="." unique_id=710897658]
+position = Vector2(56, 439)
+scale = Vector2(3, 3)
+texture = ExtResource("4_1bvp3")
